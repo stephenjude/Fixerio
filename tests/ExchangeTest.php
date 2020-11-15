@@ -1,14 +1,15 @@
 <?php
 
 use Fadion\Fixerio\Currency;
-use Mockery as m;
 use Fadion\Fixerio\Exchange;
+use Mockery as m;
+use PHPUnit\Framework\TestCase;
 
-class ExchangeTest extends PHPUnit_Framework_TestCase
+class ExchangeTest extends TestCase
 {
     private $url = 'http://data.fixer.io/api';
 
-    private static $errorResponse =  [
+    private static $errorResponse = [
         'success' => false,
         'error' => [
             'code' => 999,
@@ -26,7 +27,7 @@ class ExchangeTest extends PHPUnit_Framework_TestCase
         ],
     ];
 
-    public function tearDown()
+    public function tearDown() : void
     {
         m::close();
     }
@@ -179,5 +180,4 @@ class ExchangeTest extends PHPUnit_Framework_TestCase
 
         $exchange->getResult();
     }
-
 }

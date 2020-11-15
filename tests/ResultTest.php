@@ -2,8 +2,9 @@
 
 use Fadion\Fixerio\Currency;
 use Fadion\Fixerio\Result;
+use PHPUnit\Framework\TestCase;
 
-class ResultTest extends PHPUnit_Framework_TestCase
+class ResultTest extends TestCase
 {
     public function testGetters()
     {
